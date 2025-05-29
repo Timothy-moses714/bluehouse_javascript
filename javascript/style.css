@@ -1,8 +1,11 @@
 body{
     background-color: #fefafa;
+    font-family: sans-serif;
+    padding: 10px;
 }
 h1{
     color: orange;
+    font-size: 30px;
 }
 p{
     font-size: 18px;
