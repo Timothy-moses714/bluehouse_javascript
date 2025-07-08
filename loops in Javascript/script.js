@@ -1,5 +1,5 @@
 /*write a for loop that print even number
-from */ 
+from  1 to 10*/ 
 var number = 2;
 for (var number = 2; number <= 10; number++){
     if (number % 2 === 0){
