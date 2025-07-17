@@ -1,6 +1,6 @@
 var user = {
-    username: "John Mark",
-    password: "myPass123",
+    username: "john",
+    password: "mark"
 };
 
 var database = [user];
@@ -22,40 +22,67 @@ var newsfeed = [
 
 /* facebook clone*/
 var database = [
-    {
-        username: "salisu",
-        password: "adamu"
-    }
+  {
+    username: "salisu",
+    password: "adamu"
+  },
+  {
+    username: "mark",
+    password: "12345"
+  },
+  {
+    username: "due",
+    password: "111111"
+  },
+  {
+    username: " mark hun",
+    password: "556677"
+  },
+  {
+    username: "backard yoe",
+    password: "Pass123"
+  },
+  {
+    username: "james bry",
+    password: "myPass123"
+  }
 ];
 
 var newsfeed = [
-    {
-        username: "Tboy",
-        timeline: "Javascript is hard"
-    },
-
-
-
-
-    
-     {
-        username: "John",
-        timeline: "hooks and jumps"
-    },
-
-     {
-        username: "Mark",
-        password: "it's geeting interesting"
-    },
+  {
+    username: "Tboy",
+    timeline: "Javascript is hard"
+  },
+  {
+    username: "John",
+    timeline: "hooks and jumps"
+  },
+  {
+    username: "Mark",
+    timeline: "it's getting interesting"
+  }
 ];
-var usernameprompt = prompt("username");
-var passwordprompt = prompt("password");
-function signIn(user, pass){
-    if (user === database.username && pass === database[0].password){
-        console.log(newsfeed);
 
-    } else {
-        alert("wrong details")
+
+function isUserValid(user, pass) {
+  for (var i = 0; i < database.length; i++) {
+    if (database[i].username === user && database[i].password === pass) {
+      return true;
     }
-};
-signIn(usernameprompt, passwordprompt);
+  }
+  return false;
+}
+
+function signIn(user, pass) {
+  if (isUserValid(user, pass)) {
+    console.log("Login successful!");
+    console.log(newsfeed);
+  } else {
+    alert("Wrong username or password");
+  }
+}
+
+var usernamePrompt = prompt("Enter username:");
+var passwordPrompt = prompt("Enter password:");
+
+signIn(usernamePrompt, passwordPrompt);
